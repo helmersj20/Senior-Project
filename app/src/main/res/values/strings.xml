@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Tennis String Recommender</string>
+    <string name="tennis_string_recommender">Tennis String Recommender</string>
+    <string name="begin">Begin</string>
+    <string name="beginner">Beginner</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="advanced">Advanced</string>
+    <string name="recommend">Recommend</string>
+    <string name="expLevel">Select your experience level:</string>
+    <string name="title_activity_recommendation">Recommendation</string>
+    <string name="arm_injury_no">No</string>
+    <string name="arm_injury_yes">Yes</string>
+    <string name="have_you_had_arm_injuries_in_the_past">Have you had arm injuries in the past?</string>
+    <string name="lowPrice">Low</string>
+    <string name="mediumPrice">Medium</string>
+    <string name="highPrice">High</string>
+    <string name="what_price_level_are_you_looking_for">What price level are you looking for?</string>
+</resources>

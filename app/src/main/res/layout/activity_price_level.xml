@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PriceLevel">
+
+    <RadioGroup
+        android:id="@+id/radioGroupExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="444dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginLeft="201dp"
+        android:layout_marginRight="210dp"
+        android:layout_marginStart="201dp"
+        android:layout_marginTop="287dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioLow"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/lowPrice"
+            android:onClick="onRadioPriceClicked"/>
+
+        <RadioButton
+            android:id="@+id/radioMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mediumPrice"
+            android:onClick="onRadioPriceClicked"/>
+
+        <RadioButton
+            android:id="@+id/radioHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/highPrice"
+            android:onClick="onRadioPriceClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/priceLevelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginLeft="91dp"
+        android:layout_marginRight="91dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="176dp"
+        android:text="@string/what_price_level_are_you_looking_for"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupExp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
