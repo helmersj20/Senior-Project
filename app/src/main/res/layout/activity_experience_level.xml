@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExperienceLevel">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="498dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginRight="173dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="214dp"
+        android:text="@string/expLevel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="444dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginLeft="201dp"
+        android:layout_marginRight="210dp"
+        android:layout_marginStart="201dp"
+        android:layout_marginTop="287dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioBeginner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/beginner"
+            android:onClick="onRadioExpClicked"/>
+
+        <RadioButton
+            android:id="@+id/radioIntermediate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intermediate"
+            android:onClick="onRadioExpClicked"/>
+
+        <RadioButton
+            android:id="@+id/radioAdvanced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/advanced"
+            android:onClick="onRadioExpClicked"/>
+    </RadioGroup>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
