@@ -5,16 +5,16 @@ import android.os.Parcelable;
 
 public class Player implements Parcelable {
     public String experienceLevel;
-    public Boolean armInjuryHistory;
+    public String armInjuryHistory;
     public String priceLevel;
 
     public Player(){
         this.experienceLevel = "";
-        this.armInjuryHistory = Boolean.FALSE;
+        this.armInjuryHistory = "";
         this.priceLevel = "";
     }
 
-    public Player(String exp, Boolean arm, String price){
+    public Player(String exp, String arm, String price){
         this.experienceLevel = exp;
         this.armInjuryHistory = arm;
         this.priceLevel = price;
@@ -22,15 +22,14 @@ public class Player implements Parcelable {
 
     protected Player(Parcel in) {
         experienceLevel = in.readString();
-        byte tmpArmInjuryHistory = in.readByte();
-        armInjuryHistory = tmpArmInjuryHistory == 0 ? null : tmpArmInjuryHistory == 1;
+        armInjuryHistory = in.readString();
         priceLevel = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(experienceLevel);
-        dest.writeByte((byte) (armInjuryHistory == null ? 0 : armInjuryHistory ? 1 : 2));
+        dest.writeString(armInjuryHistory);
         dest.writeString(priceLevel);
     }
 
@@ -55,7 +54,7 @@ public class Player implements Parcelable {
         this.experienceLevel = experienceLevel;
     }
 
-    public void setArmInjuryHistory(Boolean armInjuryHistory) {
+    public void setArmInjuryHistory(String armInjuryHistory) {
         this.armInjuryHistory = armInjuryHistory;
     }
 
@@ -67,11 +66,105 @@ public class Player implements Parcelable {
         return experienceLevel;
     }
 
-    public Boolean getArmInjuryHistory() {
+    public String getArmInjuryHistory() {
         return armInjuryHistory;
     }
 
     public String getPriceLevel() {
         return priceLevel;
+    }
+
+    public String recommend(){
+        String recommendation = "";
+        switch(this.experienceLevel){
+            case "Beginner":
+                switch(this.armInjuryHistory){
+                    case "No":
+                        switch(this.priceLevel){
+                            case "Low":
+                                recommendation = "Wilson Synthetic Gut 16 at 55 lbs";
+                                return recommendation;
+                            case "Medium":
+                                recommendation = "Wilson Sensation 16 at 55 lbs";
+                                return recommendation;
+                            case "High":
+                                recommendation = "Wilson NXT 16 at 55 lbs";
+                                return recommendation;
+                        }
+                    case "Yes":
+                        switch(this.priceLevel){
+                            case "Low":
+                                recommendation = "Wilson Synthetic Gut 16 at 52 lbs";
+                                return recommendation;
+                            case "Medium":
+                                recommendation = "Wilson Sensation 16 at 52 lbs";
+                                return recommendation;
+                            case "High":
+                                recommendation = "Wilson NXT 16 at 52 lbs";
+                                return recommendation;
+                        }
+
+
+                }
+            case "Intermediate":
+                switch(this.armInjuryHistory){
+                    case "No":
+                        switch(this.priceLevel){
+                            case "Low":
+                                recommendation = "Luxilon Adrenaline 16 mains and Wilson Synthetic Gut 16 crosses at 54 lbs";
+                                return recommendation;
+                            case "Medium":
+                                recommendation = "Solinco Tour Bite 16 mains and Wilson NXT 16 crosses at 54 lbs";
+                                return recommendation;
+                            case "High":
+                                recommendation = "Luxilon ALU Power 16 mains and Wilson NXT 16 crosses at 54 lbs";
+                                return recommendation;
+                        }
+                    case "Yes":
+                        switch(this.priceLevel){
+                            case "Low":
+                                recommendation = "Luxilon Adrenaline 16 mains and Wilson Synthetic Gut 16 crosses at 50 lbs";
+                                return recommendation;
+                            case "Medium":
+                                recommendation = "Luxilon Adrenaline 16 mains and Wilson Sensation 16 crosses at 50 lbs";
+                                return recommendation;
+                            case "High":
+                                recommendation = "Wilson ALU Power 16 mains and Wilson NXT crosses at 50 lbs";
+                                return recommendation;
+                        }
+
+
+                }
+            case "Advanced":
+                switch(this.armInjuryHistory){
+                    case "No":
+                        switch(this.priceLevel){
+                            case "Low":
+                                recommendation = "Luxilon Adrenaline Power 16 at 52 lbs";
+                                return recommendation;
+                            case "Medium":
+                                recommendation = "Solinco Tour Bite 16 at 52 lbs";
+                                return recommendation;
+                            case "High":
+                                recommendation = "Luxilon ALU Power 16 at 52 lbs";
+                                return recommendation;
+                        }
+                    case "Yes":
+                        switch(this.priceLevel){
+                            case "Low":
+                                recommendation = "Luxilon Adrenaline mains and Wilson Sensation 16 crosses at 52 lbs";
+                                return recommendation;
+                            case "Medium":
+                                recommendation = "Solinco Tour Bite 16 mains and Wilson Sensation 16 crosses at 52 lbs";
+                                return recommendation;
+                            case "High":
+                                recommendation = "Wilson Natural Gut 16 mains and Luxilon ALU Power crosses at 52 lbs";
+                                return recommendation;
+                        }
+
+
+                }
+        }
+        return recommendation;
     }
 }

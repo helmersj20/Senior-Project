@@ -31,11 +31,11 @@ public class ArmInjuryHistory extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radioArmNo:
                 if (checked)
-                    player.setArmInjuryHistory(Boolean.FALSE);
+                    player.setArmInjuryHistory("No");
                 break;
             case R.id.radioArmYes:
                 if (checked)
-                    player.setArmInjuryHistory(Boolean.TRUE);
+                    player.setArmInjuryHistory("Yes");
                 break;
         }
 
