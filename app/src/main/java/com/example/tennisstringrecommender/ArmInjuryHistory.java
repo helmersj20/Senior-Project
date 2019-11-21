@@ -12,6 +12,7 @@ public class ArmInjuryHistory extends AppCompatActivity {
     String armStr;
     String recStr;
     String message;
+    Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class ArmInjuryHistory extends AppCompatActivity {
         setContentView(R.layout.activity_arm_injury_history);
 
         Intent intent = getIntent();
-        message = intent.getStringExtra("radioChosen");
+        player = intent.getParcelableExtra("radioChosen");
 
 
     }
@@ -30,17 +31,16 @@ public class ArmInjuryHistory extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radioArmNo:
                 if (checked)
-                    armStr = message+"No";
+                    player.setArmInjuryHistory(Boolean.FALSE);
                 break;
             case R.id.radioArmYes:
                 if (checked)
-                    armStr = message+"Yes";
+                    player.setArmInjuryHistory(Boolean.TRUE);
                 break;
         }
 
-        recStr = message + armStr;
         Intent intent = new Intent(this, PriceLevel.class);
-        intent.putExtra("radioChosen", armStr);
+        intent.putExtra("radioChosen", player);
         startActivity(intent);
     }
 

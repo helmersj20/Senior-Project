@@ -9,8 +9,9 @@ import android.widget.RadioButton;
 import android.widget.Button;
 import android.view.View;
 
-public class ExperienceLevel extends AppCompatActivity {
+public class ExperienceLevel extends AppCompatActivity{
 
+    public Player player = new Player();
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private Button btn;
@@ -30,20 +31,20 @@ public class ExperienceLevel extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radioBeginner:
                 if (checked)
-                    expStr = "Beginner";
+                    player.setExperienceLevel("Beginner");
                         break;
             case R.id.radioIntermediate:
                 if (checked)
-                    expStr = "Intermediate";
+                    player.setExperienceLevel("Intermediate");
                         break;
             case R.id.radioAdvanced:
                 if (checked)
-                    expStr = "Advanced";
+                    player.setExperienceLevel("Advanced");
                         break;
         }
 
         Intent intent = new Intent(this, ArmInjuryHistory.class);
-        intent.putExtra("radioChosen", expStr);
+        intent.putExtra("radioChosen", player);
         startActivity(intent);
    }
 

@@ -11,7 +11,7 @@ public class Recommendation extends AppCompatActivity {
 
     String message;
     TextView recTextView;
-
+    Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,7 @@ public class Recommendation extends AppCompatActivity {
         String recString = "";
 
         Intent intent = getIntent();
-        message = intent.getStringExtra("radioChosen");
-
-        recTextView = findViewById(R.id.recommendation);
-        recTextView.setText(message);
-        recString = recommend(message);
-        recTextView.setText(recString);
+        player = intent.getParcelableExtra("radioChosen");
 
 
     }
