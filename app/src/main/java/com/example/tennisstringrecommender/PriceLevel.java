@@ -12,6 +12,7 @@ public class PriceLevel extends AppCompatActivity {
     String message;
     String priceStr;
     String recString;
+    Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class PriceLevel extends AppCompatActivity {
         setContentView(R.layout.activity_price_level);
 
         Intent intent = getIntent();
-        message = intent.getStringExtra("radioChosen");
+        player = intent.getParcelableExtra("radioChosen");
     }
 
     public void onRadioPriceClicked(View view) {
@@ -29,21 +30,20 @@ public class PriceLevel extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radioLow:
                 if (checked)
-                    priceStr = "Low";
+                    player.setPriceLevel("Low");
                 break;
             case R.id.radioMedium:
                 if (checked)
-                    priceStr = "Medium";
+                    player.setPriceLevel("Medium");
                 break;
             case R.id.radioHigh:
                 if (checked)
-                    priceStr = "High";
+                    player.setPriceLevel("High");
                 break;
         }
 
-        recString = message + priceStr;
         Intent intent = new Intent(this, Recommendation.class);
-        intent.putExtra("radioChosen", recString);
+        intent.putExtra("radioChosen", player);
         startActivity(intent);
 
     }
