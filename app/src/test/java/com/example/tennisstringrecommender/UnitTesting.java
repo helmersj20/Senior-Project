@@ -42,11 +42,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Low", emptyConstructorPlayer.getPriceLevel());
     }
 
-//    @Test
-//    public void BeginnerNoLowRecommendation() {
-//        testRec = emptyConstructorPlayer.recommend();
-//        Assert.assertEquals("Wilson Synthetic Gut 16 at 55 lbs", testRec);
-//    }
+    @Test
+    public void BeginnerNoLowRecommendation() {
+        emptyConstructorPlayer.setExperienceLevel("Beginner");
+        emptyConstructorPlayer.setArmInjuryHistory("No");
+        emptyConstructorPlayer.setPriceLevel("Low");
+
+        testRec = emptyConstructorPlayer.recommend();
+        Assert.assertEquals("Wilson Synthetic Gut 16 at 55 lbs", testRec);
+    }
 
     @Test
     public void BeginnerNoMedium(){
@@ -59,10 +63,14 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Medium", testPlayer.getPriceLevel());
     }
 
-//    @Test
-//    public void BeginnerNoMediumRecommendation() {
-//        Assert.assertEquals("Wilson Sensation 16 at 55 lbs", testPlayer.recommend());
-//    }
+    @Test
+    public void BeginnerNoMediumRecommendation() {
+        testPlayer.setExperienceLevel("Beginner");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("Medium");
+
+        Assert.assertEquals("Wilson Sensation 16 at 55 lbs", testPlayer.recommend());
+    }
 
     @Test
     public void BeginnerNoHigh() {
@@ -75,10 +83,14 @@ public class UnitTesting extends Player{
         Assert.assertEquals("High", testPlayer.getPriceLevel());
     }
 
-//    @Test
-//    public void BeginnerNoHighRecommendation() {
-//        Assert.assertEquals("Wilson NXT 16 at 55 lbs", testPlayer.recommend());
-//    }
+    @Test
+    public void BeginnerNoHighRecommendation() {
+        testPlayer.setExperienceLevel("Beginner");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("High");
+
+        Assert.assertEquals("Wilson NXT 16 at 55 lbs", testPlayer.recommend());
+    }
 
     @Test
     public void BeginnerYesLow(){
@@ -89,6 +101,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Beginner", testPlayer.getExperienceLevel());
         Assert.assertEquals("Yes", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("Low", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void BeginnerYesLowRecommendation(){
+        testPlayer.setExperienceLevel("Beginner");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("Low");
+
+        Assert.assertEquals("Wilson Synthetic Gut 16 at 52 lbs", testPlayer.recommend());
     }
 
     @Test
@@ -103,6 +124,15 @@ public class UnitTesting extends Player{
     }
 
     @Test
+    public void BeginnerYesMediumRecommendation(){
+        testPlayer.setExperienceLevel("Beginner");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("Medium");
+
+        Assert.assertEquals("Wilson Sensation 16 at 52 lbs", testPlayer.recommend());
+    }
+
+    @Test
     public void BeginnerYesHigh() {
         testPlayer.setExperienceLevel("Beginner");
         testPlayer.setArmInjuryHistory("Yes");
@@ -111,6 +141,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Beginner", testPlayer.getExperienceLevel());
         Assert.assertEquals("Yes", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("High", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void BeginnerYesHighRecommendation(){
+        testPlayer.setExperienceLevel("Beginner");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("High");
+
+        Assert.assertEquals("Wilson NXT 16 at 52 lbs", testPlayer.recommend());
     }
 
     @Test
@@ -125,6 +164,15 @@ public class UnitTesting extends Player{
     }
 
     @Test
+    public void IntermediateNoLowRecommendation(){
+        testPlayer.setExperienceLevel("Intermediate");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("Low");
+
+        Assert.assertEquals("Luxilon Adrenaline 16 mains and Wilson Synthetic Gut 16 crosses at 54 lbs", testPlayer.recommend());
+    }
+
+    @Test
     public void IntermediateNoMedium(){
         testPlayer.setExperienceLevel("Intermediate");
         testPlayer.setArmInjuryHistory("No");
@@ -133,6 +181,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Intermediate", testPlayer.getExperienceLevel());
         Assert.assertEquals("No", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("Medium", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void IntermediateNoMediumRecommendation(){
+        testPlayer.setExperienceLevel("Intermediate");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("Medium");
+
+        Assert.assertEquals("Solinco Tour Bite 16 mains and Wilson NXT 16 crosses at 54 lbs", testPlayer.recommend());
     }
 
     @Test
@@ -147,6 +204,15 @@ public class UnitTesting extends Player{
     }
 
     @Test
+    public void IntermediateNoHighRecommendation(){
+        testPlayer.setExperienceLevel("Intermediate");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("High");
+
+        Assert.assertEquals("Luxilon ALU Power 16 mains and Wilson NXT 16 crosses at 54 lbs", testPlayer.recommend());
+    }
+
+    @Test
     public void IntermediateYesLow(){
         testPlayer.setExperienceLevel("Intermediate");
         testPlayer.setArmInjuryHistory("Yes");
@@ -155,6 +221,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Intermediate", testPlayer.getExperienceLevel());
         Assert.assertEquals("Yes", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("Low", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void IntermediateYesLowRecommendation(){
+        testPlayer.setExperienceLevel("Intermediate");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("Low");
+
+        Assert.assertEquals("Luxilon Adrenaline 16 mains and Wilson Synthetic Gut 16 crosses at 50 lbs", testPlayer.recommend());
     }
 
     @Test
@@ -169,6 +244,15 @@ public class UnitTesting extends Player{
     }
 
     @Test
+    public void IntermediateYesMediumRecommendation(){
+        testPlayer.setExperienceLevel("Intermediate");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("Medium");
+
+        Assert.assertEquals("Luxilon Adrenaline 16 mains and Wilson Sensation 16 crosses at 50 lbs", testPlayer.recommend());
+    }
+
+    @Test
     public void IntermediateYesHigh() {
         testPlayer.setExperienceLevel("Intermediate");
         testPlayer.setArmInjuryHistory("Yes");
@@ -177,6 +261,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Intermediate", testPlayer.getExperienceLevel());
         Assert.assertEquals("Yes", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("High", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void IntermediateYesHighRecommendation(){
+        testPlayer.setExperienceLevel("Intermediate");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("High");
+
+        Assert.assertEquals("Wilson ALU Power 16 mains and Wilson NXT crosses at 50 lbs", testPlayer.recommend());
     }
 
     @Test
@@ -191,6 +284,15 @@ public class UnitTesting extends Player{
     }
 
     @Test
+    public void AdvancedNoLowRecommendation(){
+        testPlayer.setExperienceLevel("Advanced");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("Low");
+
+        Assert.assertEquals("Luxilon Adrenaline Power 16 at 52 lbs", testPlayer.recommend());
+    }
+
+    @Test
     public void AdvancedNoMedium(){
         testPlayer.setExperienceLevel("Advanced");
         testPlayer.setArmInjuryHistory("No");
@@ -199,6 +301,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Advanced", testPlayer.getExperienceLevel());
         Assert.assertEquals("No", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("Medium", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void AdvancedNoMediumRecommendation(){
+        testPlayer.setExperienceLevel("Advanced");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("Medium");
+
+        Assert.assertEquals("Solinco Tour Bite 16 at 52 lbs", testPlayer.recommend());
     }
 
     @Test
@@ -213,6 +324,15 @@ public class UnitTesting extends Player{
     }
 
     @Test
+    public void AdvancedNoHighRecommendation(){
+        testPlayer.setExperienceLevel("Advanced");
+        testPlayer.setArmInjuryHistory("No");
+        testPlayer.setPriceLevel("High");
+
+        Assert.assertEquals("Luxilon ALU Power 16 at 52 lbs", testPlayer.recommend());
+    }
+
+    @Test
     public void AdvancedYesLow(){
         testPlayer.setExperienceLevel("Advanced");
         testPlayer.setArmInjuryHistory("Yes");
@@ -221,6 +341,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Advanced", testPlayer.getExperienceLevel());
         Assert.assertEquals("Yes", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("Low", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void AdvancedYesLowRecommendation(){
+        testPlayer.setExperienceLevel("Advanced");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("Low");
+
+        Assert.assertEquals("Luxilon Adrenaline mains and Wilson Sensation 16 crosses at 52 lbs", testPlayer.recommend());
     }
 
     @Test
@@ -235,6 +364,15 @@ public class UnitTesting extends Player{
     }
 
     @Test
+    public void AdvancedYesMediumRecommendation(){
+        testPlayer.setExperienceLevel("Advanced");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("Medium");
+
+        Assert.assertEquals("Solinco Tour Bite 16 mains and Wilson Sensation 16 crosses at 52 lbs", testPlayer.recommend());
+    }
+
+    @Test
     public void AdvancedYesHigh() {
         testPlayer.setExperienceLevel("Advanced");
         testPlayer.setArmInjuryHistory("Yes");
@@ -243,6 +381,15 @@ public class UnitTesting extends Player{
         Assert.assertEquals("Advanced", testPlayer.getExperienceLevel());
         Assert.assertEquals("Yes", testPlayer.getArmInjuryHistory());
         Assert.assertEquals("High", testPlayer.getPriceLevel());
+    }
+
+    @Test
+    public void AdvancedYesHighRecommendation(){
+        testPlayer.setExperienceLevel("Advanced");
+        testPlayer.setArmInjuryHistory("Yes");
+        testPlayer.setPriceLevel("High");
+
+        Assert.assertEquals("Wilson Natural Gut 16 mains and Luxilon ALU Power crosses at 52 lbs", testPlayer.recommend());
     }
 //    @Test
 //    public void beginnerNoLow(){
