@@ -42,7 +42,7 @@ public class PriceLevel extends AppCompatActivity {
                 break;
         }
 
-        Intent intent = new Intent(this, Recommendation.class);
+        Intent intent = new Intent(this, Recommend.class);
         intent.putExtra("radioChosen", player);
         startActivity(intent);
 

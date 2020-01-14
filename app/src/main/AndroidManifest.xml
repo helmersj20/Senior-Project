@@ -13,7 +13,7 @@
         <activity android:name=".PriceLevel" />
         <activity android:name=".ArmInjuryHistory" />
         <activity
-            android:name=".Recommendation"
+            android:name=".Recommend"
             android:label="@string/title_activity_recommendation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ExperienceLevel" />
