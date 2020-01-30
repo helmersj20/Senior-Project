@@ -28,5 +28,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ExperienceLevel.class));
             }
         });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DatabaseView.class));
+            }
+        });
+    }
+
+    public void AddData(String newEntry) {
+        boolean insertData = databaseHelper.addData(newEntry);
     }
 }

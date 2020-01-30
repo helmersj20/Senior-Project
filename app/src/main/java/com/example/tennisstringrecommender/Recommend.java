@@ -5,19 +5,26 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Recommend extends AppCompatActivity {
 
     String message;
     TextView recTextView;
     Player player;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommendation);
         String recString = "";
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+        databaseHelper = new DatabaseHelper(this);
 
         Intent intent = getIntent();
         player = intent.getParcelableExtra("radioChosen");
@@ -27,7 +34,39 @@ public class Recommend extends AppCompatActivity {
         recTextView = findViewById(R.id.recommendation);
         recTextView.setText(recString);
 
+        final String finalRecString = recString;
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String newEntry = finalRecString;
+                AddData(newEntry);
+//                startActivity(new Intent(MainActivity.this, ExperienceLevel.class));
+            }
+        });
 
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Recommend.this, DatabaseView.class));
+            }
+        });
+
+
+    }
+
+    public void AddData(String newEntry) {
+        boolean insertData = databaseHelper.addData(newEntry);
+
+        if(insertData){
+            toastMessage("Recommendation Added to Database");
+        }
+        else{
+            toastMessage("Error");
+        }
+    }
+
+    private void toastMessage(String message){
+        Toast.makeText(this,message,Toast.LENGTH_SHORT);
     }
 //    public String recommend(String s){
 //        if(s.equals("BeginnerNoLow")){
