@@ -47,7 +47,7 @@ public class Recommend extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Recommend.this, DatabaseView.class));
+                startActivity(new Intent(Recommend.this, MainActivity.class));
             }
         });
 

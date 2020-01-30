@@ -62,7 +62,7 @@
         android:layout_marginRight="113dp"
         android:layout_marginStart="158dp"
         android:layout_marginTop="65dp"
-        android:text="Go to Database"
+        android:text="Go to Homepage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
