@@ -23,6 +23,7 @@ public class ArmInjuryHistory extends AppCompatActivity {
 
     }
 
+    //Sets the ArmInjuryHistory of the player and moves to the PriceLevel Screen
     public void onRadioArmClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
 

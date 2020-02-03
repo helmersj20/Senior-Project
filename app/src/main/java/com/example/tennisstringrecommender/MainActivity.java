@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button prevRecButton = (Button) findViewById(R.id.prevRecButton);
         databaseHelper = new DatabaseHelper(this);
 
-
+        //Starts the questionare process
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Sends user to list view populated by database
         prevRecButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

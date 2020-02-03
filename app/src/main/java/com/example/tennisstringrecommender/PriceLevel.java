@@ -20,6 +20,7 @@ public class PriceLevel extends AppCompatActivity {
         player = intent.getParcelableExtra("radioChosen");
     }
 
+    //Sets the players priceLevel and moves the user to the power level activity
     public void onRadioPriceClicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();

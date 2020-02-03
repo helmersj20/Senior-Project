@@ -20,6 +20,7 @@ public class PowerLevel extends AppCompatActivity {
         player = intent.getParcelableExtra("radioChosen");
     }
 
+    //Sets the players powerLevel and moves the user to the recommendation
     public void onRadioPowerClicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();

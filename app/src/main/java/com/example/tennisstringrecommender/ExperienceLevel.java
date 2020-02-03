@@ -22,6 +22,7 @@ public class ExperienceLevel extends AppCompatActivity{
 
     }
 
+    //Sets the players ExperienceLevel and moves to the ArmInjuryHistory page
    public void onRadioExpClicked(View view){
         boolean checked = ((RadioButton) view).isChecked();
 

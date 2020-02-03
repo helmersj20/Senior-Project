@@ -33,6 +33,7 @@ public class Recommend extends AppCompatActivity {
         recTextView = findViewById(R.id.recommendation);
         recTextView.setText(recString);
 
+        //Adds the recommendation returned by the player.recommend() function to the database
         final String finalRecString = recString;
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +44,7 @@ public class Recommend extends AppCompatActivity {
             }
         });
 
+        //Sends user back to the homepage
         homeFromRecButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

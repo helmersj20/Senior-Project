@@ -41,6 +41,7 @@ public class DatabaseView extends AppCompatActivity {
         });
     }
 
+    //Populates the list view with items in the database
     private void populateListView(){
         Log.d(TAG,"populateListView: Displaying data in the ListView.");
 

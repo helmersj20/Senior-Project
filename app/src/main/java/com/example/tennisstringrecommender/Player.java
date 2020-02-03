@@ -23,6 +23,8 @@ public class Player implements Parcelable {
         this.powerLevel = power;
     }
 
+//Parcel functions allow for the player object to be passed from activity to activity as you would other data structures
+
     protected Player(Parcel in) {
         experienceLevel = in.readString();
         armInjuryHistory = in.readString();
@@ -85,6 +87,8 @@ public class Player implements Parcelable {
 
     public String getPowerLevel() { return powerLevel; }
 
+
+    //Creates a recommemdation based on values of the ExperienceLevel, ArmInjuryHistory, PriceLevel, and PowerLevel
     public String recommend(){
         String recommendation = "";
         switch(this.experienceLevel){

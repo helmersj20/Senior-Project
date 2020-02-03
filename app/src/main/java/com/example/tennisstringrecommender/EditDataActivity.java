@@ -37,6 +37,7 @@ public class EditDataActivity extends AppCompatActivity {
         selectedName = receivedIntent.getStringExtra("name");
         dataText.setText(selectedName);
 
+        //Lets the delete button delete the data from the database
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

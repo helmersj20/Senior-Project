@@ -24,12 +24,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+    //Creates the table used to store data
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase){
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 +" TEXT)";
         sqLiteDatabase.execSQL(createTable);
     }
 
+    //Adds data to the database, specifically a recommendation
     public boolean addData(String item){
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -47,6 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "Select * FROM " +TABLE_NAME;
@@ -62,6 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    //Deletes a recommendation from the database
     public void deleteName(int id, String name){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + id + "'" + " AND " + COL2 + " = '" + name +"'";
