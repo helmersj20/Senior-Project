@@ -15,9 +15,9 @@
     <string name="mediumPrice">Medium</string>
     <string name="highPrice">High</string>
     <string name="what_price_level_are_you_looking_for">What price level are you looking for?</string>
-    <string name="low_power">Low Power</string>
-    <string name="medium_power">Medium Power</string>
-    <string name="high_power">High Power</string>
+    <string name="low_power">Low</string>
+    <string name="medium_power">Medium</string>
+    <string name="high_power">High</string>
     <string name="power_text">What Power Level Would You Prefer?</string>
     <string name="view_previous_recommendations">View Previous Recommendations</string>
 </resources>

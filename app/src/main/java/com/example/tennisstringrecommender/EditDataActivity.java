@@ -26,9 +26,9 @@ public class EditDataActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
-        deleteButton = (Button) findViewById(R.id.button5);
-        dbFromEditButton = (Button) findViewById(R.id.button6);
-        dataText = (TextView) findViewById(R.id.textView3);
+        deleteButton = (Button) findViewById(R.id.deleteButton);
+        dbFromEditButton = (Button) findViewById(R.id.dbFromEditButton);
+        dataText = (TextView) findViewById(R.id.dataRec);
         databaseHelper = new DatabaseHelper(this);
 
         Intent receivedIntent = getIntent();

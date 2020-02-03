@@ -29,7 +29,7 @@ public class DatabaseView extends AppCompatActivity {
         setContentView(R.layout.activity_database_view);
         listView = (ListView) findViewById(R.id.ListView);
         databaseHelper = new DatabaseHelper(this);
-        Button homeFromDataButton = (Button) findViewById(R.id.button7);
+        Button homeFromDataButton = (Button) findViewById(R.id.homeFromDataButton);
 
         populateListView();
 

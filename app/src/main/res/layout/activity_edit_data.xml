@@ -7,7 +7,7 @@
     tools:context=".EditDataActivity">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="346dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/dataRec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
@@ -33,13 +33,13 @@
         android:layout_marginStart="177dp"
         android:layout_marginTop="251dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/dbFromEditButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="272dp"
@@ -47,10 +47,10 @@
         android:layout_marginLeft="168dp"
         android:layout_marginRight="155dp"
         android:layout_marginStart="168dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="100dp"
         android:text="GO BACK TO DATABASE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/deleteButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
