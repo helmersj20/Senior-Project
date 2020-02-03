@@ -33,6 +33,7 @@
         android:layout_marginStart="177dp"
         android:layout_marginTop="251dp"
         android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/deleteButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -19,7 +19,7 @@
         android:id="@+id/homeFromDataButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go Back to Home Page"
+        android:text="Go to Homepage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -49,6 +49,7 @@
         android:layout_marginStart="85dp"
         android:layout_marginTop="157dp"
         android:text="@string/have_you_had_arm_injuries_in_the_past"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/radioGroupArm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

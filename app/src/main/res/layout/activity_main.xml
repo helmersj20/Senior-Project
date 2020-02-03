@@ -48,4 +48,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beginButton" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginLeft="138dp"
+        android:layout_marginRight="138dp"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tpic" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
