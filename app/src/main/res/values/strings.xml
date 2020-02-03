@@ -19,4 +19,5 @@
     <string name="medium_power">Medium Power</string>
     <string name="high_power">High Power</string>
     <string name="power_text">What Power Level Would You Prefer?</string>
+    <string name="view_previous_recommendations">View Previous Recommendations</string>
 </resources>

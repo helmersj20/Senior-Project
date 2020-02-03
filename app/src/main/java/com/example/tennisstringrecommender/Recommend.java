@@ -11,8 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Recommend extends AppCompatActivity {
-
-    String message;
+    
     TextView recTextView;
     Player player;
     DatabaseHelper databaseHelper;
@@ -22,8 +21,8 @@ public class Recommend extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommendation);
         String recString = "";
-        Button button3 = (Button) findViewById(R.id.button3);
-        Button button4 = (Button) findViewById(R.id.button4);
+        Button addButton = (Button) findViewById(R.id.button3);
+        Button homeFromRecButton = (Button) findViewById(R.id.button4);
         databaseHelper = new DatabaseHelper(this);
 
         Intent intent = getIntent();
@@ -35,7 +34,7 @@ public class Recommend extends AppCompatActivity {
         recTextView.setText(recString);
 
         final String finalRecString = recString;
-        button3.setOnClickListener(new View.OnClickListener() {
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String newEntry = finalRecString;
@@ -44,7 +43,7 @@ public class Recommend extends AppCompatActivity {
             }
         });
 
-        button4.setOnClickListener(new View.OnClickListener() {
+        homeFromRecButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Recommend.this, MainActivity.class));

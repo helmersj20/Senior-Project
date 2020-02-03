@@ -9,9 +9,6 @@ import android.widget.RadioButton;
 
 public class PriceLevel extends AppCompatActivity {
 
-    String message;
-    String priceStr;
-    String recString;
     Player player;
 
     @Override

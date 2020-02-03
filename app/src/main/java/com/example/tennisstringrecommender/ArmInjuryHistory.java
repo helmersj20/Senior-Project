@@ -9,9 +9,7 @@ import android.widget.RadioButton;
 
 public class ArmInjuryHistory extends AppCompatActivity {
 
-    String armStr;
-    String recStr;
-    String message;
+
     Player player;
 
     @Override

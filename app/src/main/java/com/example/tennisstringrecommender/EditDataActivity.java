@@ -13,8 +13,8 @@ public class EditDataActivity extends AppCompatActivity {
 
     private static final String TAG = "EditDataActivity";
 
-    private Button button5;
-    private Button button6;
+    private Button deleteButton;
+    private Button dbFromEditButton;
     private TextView dataText;
 
     DatabaseHelper databaseHelper;
@@ -26,8 +26,8 @@ public class EditDataActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
-        button5 = (Button) findViewById(R.id.button5);
-        button6 = (Button) findViewById(R.id.button6);
+        deleteButton = (Button) findViewById(R.id.button5);
+        dbFromEditButton = (Button) findViewById(R.id.button6);
         dataText = (TextView) findViewById(R.id.textView3);
         databaseHelper = new DatabaseHelper(this);
 
@@ -37,7 +37,7 @@ public class EditDataActivity extends AppCompatActivity {
         selectedName = receivedIntent.getStringExtra("name");
         dataText.setText(selectedName);
 
-        button5.setOnClickListener(new View.OnClickListener() {
+        deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 databaseHelper.deleteName(selectedID,selectedName);
@@ -45,7 +45,7 @@ public class EditDataActivity extends AppCompatActivity {
             }
         });
 
-        button6.setOnClickListener(new View.OnClickListener() {
+        dbFromEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(EditDataActivity.this, DatabaseView.class));

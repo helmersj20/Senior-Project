@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -28,8 +29,16 @@ public class DatabaseView extends AppCompatActivity {
         setContentView(R.layout.activity_database_view);
         listView = (ListView) findViewById(R.id.ListView);
         databaseHelper = new DatabaseHelper(this);
+        Button homeFromDataButton = (Button) findViewById(R.id.button7);
 
         populateListView();
+
+        homeFromDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DatabaseView.this, MainActivity.class));
+            }
+        });
     }
 
     private void populateListView(){

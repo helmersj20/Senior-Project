@@ -17,19 +17,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = (Button) findViewById(R.id.button);
-        Button button2 = (Button) findViewById(R.id.button2);
+        Button beginButton = (Button) findViewById(R.id.button);
+        Button prevRecButton = (Button) findViewById(R.id.button2);
         databaseHelper = new DatabaseHelper(this);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ExperienceLevel.class));
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
+        prevRecButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DatabaseView.class));
