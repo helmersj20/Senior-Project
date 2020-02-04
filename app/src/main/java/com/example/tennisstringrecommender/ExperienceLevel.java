@@ -13,9 +13,6 @@ public class ExperienceLevel extends AppCompatActivity{
 
     public Player player = new Player();
     private RadioGroup radioGroup;
-    private RadioButton radioButton;
-    private Button btn;
-    private String expStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +22,7 @@ public class ExperienceLevel extends AppCompatActivity{
 
     }
 
+    //Sets the players ExperienceLevel and moves to the ArmInjuryHistory page
    public void onRadioExpClicked(View view){
         boolean checked = ((RadioButton) view).isChecked();
 

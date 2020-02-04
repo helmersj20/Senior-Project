@@ -5,19 +5,25 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Recommendation extends AppCompatActivity {
+public class Recommend extends AppCompatActivity {
 
-    String message;
     TextView recTextView;
     Player player;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommendation);
         String recString = "";
+        Button addButton = (Button) findViewById(R.id.addButton);
+        Button homeFromRecButton = (Button) findViewById(R.id.homeFromRecButton);
+        databaseHelper = new DatabaseHelper(this);
 
         Intent intent = getIntent();
         player = intent.getParcelableExtra("radioChosen");
@@ -27,7 +33,41 @@ public class Recommendation extends AppCompatActivity {
         recTextView = findViewById(R.id.recommendation);
         recTextView.setText(recString);
 
+        //Adds the recommendation returned by the player.recommend() function to the database
+        final String finalRecString = recString;
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String newEntry = finalRecString;
+                AddData(newEntry);
+//                startActivity(new Intent(MainActivity.this, ExperienceLevel.class));
+            }
+        });
 
+        //Sends user back to the homepage
+        homeFromRecButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Recommend.this, MainActivity.class));
+            }
+        });
+
+
+    }
+
+    public void AddData(String newEntry) {
+        boolean insertData = databaseHelper.addData(newEntry);
+
+        if(insertData){
+            toastMessage("Recommendation Added to Database");
+        }
+        else{
+            toastMessage("Error");
+        }
+    }
+
+    private void toastMessage(String message){
+        Toast.makeText(this,message,Toast.LENGTH_SHORT);
     }
 //    public String recommend(String s){
 //        if(s.equals("BeginnerNoLow")){

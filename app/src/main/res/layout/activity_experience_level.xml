@@ -7,7 +7,7 @@
     tools:context=".ExperienceLevel">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/expQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="498dp"
@@ -15,8 +15,9 @@
         android:layout_marginLeft="180dp"
         android:layout_marginRight="173dp"
         android:layout_marginStart="180dp"
-        android:layout_marginTop="214dp"
+        android:layout_marginTop="190dp"
         android:text="@string/expLevel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +60,21 @@
             android:onClick="onRadioExpClicked"/>
     </RadioGroup>
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginRight="99dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupExp"
+        app:srcCompat="@drawable/racquet" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

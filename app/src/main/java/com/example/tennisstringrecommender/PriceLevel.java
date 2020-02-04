@@ -9,9 +9,6 @@ import android.widget.RadioButton;
 
 public class PriceLevel extends AppCompatActivity {
 
-    String message;
-    String priceStr;
-    String recString;
     Player player;
 
     @Override
@@ -23,6 +20,7 @@ public class PriceLevel extends AppCompatActivity {
         player = intent.getParcelableExtra("radioChosen");
     }
 
+    //Sets the players priceLevel and moves the user to the power level activity
     public void onRadioPriceClicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
@@ -42,7 +40,7 @@ public class PriceLevel extends AppCompatActivity {
                 break;
         }
 
-        Intent intent = new Intent(this, Recommendation.class);
+        Intent intent = new Intent(this, PowerLevel.class);
         intent.putExtra("radioChosen", player);
         startActivity(intent);
 

@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PowerLevel"></activity>
+        <activity android:name=".EditDataActivity"></activity>
+        <activity android:name=".DatabaseView" />
+        <activity android:name=".PowerLevel" />
         <activity android:name=".PriceLevel" />
         <activity android:name=".ArmInjuryHistory" />
         <activity
-            android:name=".Recommendation"
+            android:name=".Recommend"
             android:label="@string/title_activity_recommendation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ExperienceLevel" />
